@@ -47,6 +47,14 @@
  */
 - (void)showNavBarAnimated:(BOOL)animated;
 
+/** Navbar slide down
+ *
+ * Manually show the navbar without alpha modification. It's don't take care about collapsed
+ *
+ * @param animated Animates the navbar scrolling
+ */
+- (void)showNavBarAnimatedWithoutAlpha:(BOOL)animated;
+
 /** Remove the scrollview tracking
  *
  * Use this method to stop following the navbar

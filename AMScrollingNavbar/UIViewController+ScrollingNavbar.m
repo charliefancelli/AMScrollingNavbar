@@ -164,6 +164,19 @@
 	}
 }
 
+- (void)showNavBarAnimatedWithoutAlpha:(BOOL)animated{
+    NSTimeInterval interval = animated ? 0.2 : 0;
+	if (self.scrollableView != nil) {
+		CGRect rect = [self scrollView].frame;
+        rect.origin.y = 0;
+        [self scrollView].frame = rect;
+        [UIView animateWithDuration:interval animations:^{
+            self.lastContentOffset = 0;
+            [self scrollWithDelta:-self.navbarHeight];
+        }];
+	}
+}
+
 - (void)showNavbar
 {
 	[self showNavBarAnimated:YES];
